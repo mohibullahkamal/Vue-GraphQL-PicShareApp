@@ -13,7 +13,36 @@ type Todo {
     completed: Boolean
 }
 
+//********** */
+// ***********
+const server = new ApolloServer({
+    typeDefs: typek
+}); //We innitialize Apollo server here
 
+server.listen(4000).then(({ url } ) => {
+    console.log('Server listening');
+}); //now that we have innitialised Apollo server; we can call a method on Server
+
+
+
+
+
+
+
+
+
+//********** */
+// ***********
+const server = new ApolloServer({
+    typeDefs: typek
+}); //We innitialize Apollo server here
+
+server.listen(4000).then(({ url } ) => {
+    console.log('Server listening');
+}); //now that we have innitialised Apollo server; we can call a method on Server
+
+//********** */
+// ***********
 const server = new ApolloServer({
     typeDefs: typek
 }); //We innitialize Apollo server here
