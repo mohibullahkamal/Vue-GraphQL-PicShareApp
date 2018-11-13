@@ -1,3 +1,5 @@
+##### This project is under continuous development, therefore not complete.
+
 # Vue-GraphQL-PicShareApp
 Picture Sharing Web App build using 
 - VueJs, 
