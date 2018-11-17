@@ -1,4 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
+const mongoose = require('mongoose');
+
+mongoose.connect();
 
 // const todos = [
 //   { task: 'Wash car', completed: false }, //personal added todos
