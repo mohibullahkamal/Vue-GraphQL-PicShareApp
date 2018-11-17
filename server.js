@@ -1,9 +1,9 @@
 const { ApolloServer, gql } = require('apollo-server');
 
-const todos = [
-  { task: 'Wash car', completed: false }, //personal added todos
-  { task: 'Clean room', completed: true } //manual data added
-];
+// const todos = [
+//   { task: 'Wash car', completed: false }, //personal added todos
+//   { task: 'Clean room', completed: true } //manual data added
+// ];
 
 //With in back-ticks we want to define type definitions
 //lets do something more interesting as to get data in graghQL - well there are build in types like
@@ -19,30 +19,30 @@ const typeDefs = gql`
     getTodos: [Todo]
   }
 
-  type Mutation {
-    addTodo(task: String, completed: Boolean): Todo
-  }
+  # type Mutation {
+  #   addTodo(task: String, completed: Boolean): Todo
+  # }
 `;
 
-//But to actually create the functionality for query -- we need to create object called resolvers to
-//retrieve data...
-const resolvers = {
-  //will contain property called "Query"
-  Query: {
-    getTodos: () => todos //and within query we have to define how to get queries...
-  },
-  Mutation: {
-    addTodo: (_, { task, completed }) => {
-      const todo = { task, completed };
-      todos.push(todo);
-      return todo;
-    }
-  }
-};
+// //But to actually create the functionality for query -- we need to create object called resolvers to
+// //retrieve data...
+// const resolvers = {
+//   //will contain property called "Query"
+//   Query: {
+//     getTodos: () => todos //and within query we have to define how to get queries...
+//   },
+//   Mutation: {
+//     addTodo: (_, { task, completed }) => {
+//       const todo = { task, completed };
+//       todos.push(todo);
+//       return todo;
+//     }
+//   }
+// };
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers
+  typeDefs
+  // resolvers
 }); //We innitialize Apollo server here
 
 server.listen().then(({ url }) => {
