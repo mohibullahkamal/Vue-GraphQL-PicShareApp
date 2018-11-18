@@ -1,7 +1,11 @@
 const { ApolloServer, gql } = require('apollo-server');
 const mongoose = require('mongoose');
+require('dotenv').config({ path: 'variable.env' });
 
-mongoose.connect();
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('DB connected'))
+  .catch(err => console.error(err));
 
 // const todos = [
 //   { task: 'Wash car', completed: false }, //personal added todos
