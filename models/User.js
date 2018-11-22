@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
       trim: true
   },
   email: {
-      type: string,
+      type: String,
       required: true, 
       trim: true
   }
@@ -17,7 +17,16 @@ const UserSchema = new mongoose.Schema({
       required: true,
       trim: true
   },
-  avatar: {},
-  joinDate: {}, 
-  favorites: {}
+  avatar: {
+    type: String
+  },
+  joinDate: {
+    type: Date,
+    default: Date.now
+  }, 
+  favorites: {
+    type: [mongoose.Schema.Types.ObjectId],
+    required: true,
+    ref: 'Post'
+  }
 });
