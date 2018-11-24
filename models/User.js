@@ -25,10 +25,10 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   }, 
   favorites: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [ mongoose.Schema.Types.ObjectId ],
     required: true,
     ref: 'Post'
   }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model( 'User', UserSchema );
