@@ -11,7 +11,7 @@
 6. deploying app to the web, 
 7. make App functional, attractive and reliable.
 
-## Picture Sharing Web App build using 
+### Picture Sharing Web App build using 
 - VueJs, 
 - GraphQL, 
 - Apollo 2, 
